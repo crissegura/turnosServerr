@@ -9,8 +9,6 @@ app.use(json())
 app.use(cors())
 app.use(route)
 
-const PORT = 3001
-
-app.listen(PORT,()=>{
-    console.log(`Servidor corriendo http://localhost:${PORT} `)
+app.listen(3001,()=>{
+    console.log('Servidor corriendo http://localhost:3001')
 })
