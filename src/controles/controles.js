@@ -30,3 +30,13 @@ export const cancelarTurno = async (req,res) => {
         console.log(error);
     }
 }
+
+export const usuarios = async (req, res) => {
+    try {
+        let conexion = await getConexion()
+        let result = await conexion.query('select * from users')
+        res.json(result[0])
+    } catch (error) {
+        console.log(error);
+    }
+}
