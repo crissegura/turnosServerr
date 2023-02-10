@@ -1,5 +1,14 @@
 import {getConexion} from '../db/db.js'
 
+export const verPrecios = async (req,res) =>{
+    try {
+        let conexion = await getConexion()
+        let result = await conexion.query('select * from precios')
+        res.json(result[0])
+    } catch (error) {
+        console.log(error);
+    }
+}
 export const verTurnos = async (req,res) =>{
     try {
         let conexion = await getConexion()
