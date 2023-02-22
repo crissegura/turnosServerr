@@ -40,6 +40,17 @@ export const cancelarTurno = async (req,res) => {
     }
 }
 
+export const eliminarTurnosViejos = async (req,res) => {
+    try {
+        let conexion = await getConexion()
+        let {id} = req.params
+        let result = await conexion.query('DELETE FROM turnos WHERE id = ?;',id)
+        res.json('Turnos cancelados')
+    } catch (error) {
+        console.log(error);
+    }
+}
+
 export const usuarios = async (req, res) => {
     try {
         let conexion = await getConexion()
